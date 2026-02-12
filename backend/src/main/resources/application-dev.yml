@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/stubmanager_dev
+    username: postgres
+    password: postgres
+  
+  jpa:
+    show-sql: true
+  
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+logging:
+  level:
+    com.stubmanager: DEBUG
+    org.springframework: INFO
