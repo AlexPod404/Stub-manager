@@ -22,8 +22,11 @@ Dynamic stub management system built with Java and Spring Boot supporting REST, 
 
 ## 🏗️ Architecture
 
+This is a Maven multi-module project with a parent POM for unified building.
+
 ```
 Stub-manager/
+├── pom.xml            # Parent POM (unifies all modules)
 ├── backend/           # Spring Boot backend service
 ├── runtime/           # Dynamic mock runtime engine
 ├── docker/            # Docker Compose configuration
@@ -50,7 +53,7 @@ docker-compose up -d
 ### Option 2: Local Build and Run
 
 ```bash
-# Build the project
+# Build the project (builds all modules from parent POM)
 ./scripts/build.sh
 
 # Run locally (requires PostgreSQL and Redis)
@@ -63,19 +66,21 @@ docker-compose up -d
 ### Option 3: Manual Build
 
 ```bash
-# Build backend
+# Build all modules from parent POM (recommended)
+mvn clean package
+
+# Or build individual modules
 cd backend
 mvn clean package
 
-# Run backend
-java -jar target/stub-manager-backend-1.0.0-SNAPSHOT.jar
-
-# Build runtime (in another terminal)
-cd runtime
+cd ../runtime
 mvn clean package
 
-# Run runtime
-java -jar target/stub-manager-runtime-1.0.0-SNAPSHOT.jar
+# Run backend
+java -jar backend/target/stub-manager-backend-1.0.0-SNAPSHOT.jar
+
+# Run runtime (in another terminal)
+java -jar runtime/target/stub-manager-runtime-1.0.0-SNAPSHOT.jar
 ```
 
 ## 📚 API Documentation

@@ -5,20 +5,10 @@
 set -e
 
 echo "=== Building Stub Manager ==="
+echo "Using unified parent POM for multi-module build..."
 
-# Build backend
-echo "Building backend..."
-cd backend
+# Build all modules from parent POM
 mvn clean package -DskipTests
-echo "✓ Backend built successfully"
-cd ..
-
-# Build runtime
-echo "Building runtime..."
-cd runtime
-mvn clean package -DskipTests
-echo "✓ Runtime built successfully"
-cd ..
 
 echo ""
 echo "=== Build Complete ==="
