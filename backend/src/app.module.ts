@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { BullModule } from '@nestjs/bull';
 import { DatabaseConfigService } from './database/database-config.service';
+import { HealthController } from './health.controller';
 import { MocksModule } from './modules/mocks/mocks.module';
 import { RoutesModule } from './modules/routes/routes.module';
 import { ConditionsModule } from './modules/conditions/conditions.module';
@@ -34,5 +35,6 @@ import { CacheModule } from './modules/cache/cache.module';
     GeneratorModule,
     CacheModule,
   ],
+  controllers: [HealthController],
 })
 export class AppModule {}
