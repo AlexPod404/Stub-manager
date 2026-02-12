@@ -28,14 +28,14 @@ public class Condition {
     private Route route;
     
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 20)
     private ConditionType type;
     
     @Column(name = "parameter_name")
     private String parameterName;
     
     @Enumerated(EnumType.STRING)
-    @Column(name = "parameter_source", length = 50)
+    @Column(name = "parameter_source", length = 20)
     private ParameterSource parameterSource;
     
     @Column(name = "parameter_path", length = 500)

@@ -27,7 +27,7 @@ public class ScenarioAction {
     private Scenario scenario;
     
     @Enumerated(EnumType.STRING)
-    @Column(name = "action_type", nullable = false, length = 50)
+    @Column(name = "action_type", nullable = false, length = 20)
     private ActionType actionType;
     
     @ManyToOne(fetch = FetchType.LAZY)

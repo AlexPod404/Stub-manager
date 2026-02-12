@@ -14,9 +14,9 @@ CREATE INDEX idx_routes_is_active ON routes(is_active);
 CREATE TABLE conditions (
     id BIGSERIAL PRIMARY KEY,
     route_id BIGINT REFERENCES routes(id) ON DELETE CASCADE,
-    type VARCHAR(50) NOT NULL,
+    type VARCHAR(20) NOT NULL,
     parameter_name VARCHAR(255),
-    parameter_source VARCHAR(50),
+    parameter_source VARCHAR(20),
     parameter_path VARCHAR(500),
     expected_value TEXT,
     priority INTEGER DEFAULT 0,

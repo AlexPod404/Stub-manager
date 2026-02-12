@@ -9,7 +9,7 @@ CREATE TABLE scenarios (
 CREATE TABLE scenario_actions (
     id BIGSERIAL PRIMARY KEY,
     scenario_id BIGINT REFERENCES scenarios(id) ON DELETE CASCADE,
-    action_type VARCHAR(50) NOT NULL,
+    action_type VARCHAR(20) NOT NULL,
     mock_id BIGINT REFERENCES mocks(id),
     time_offset INTEGER,
     delay_value INTEGER,

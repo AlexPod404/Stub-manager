@@ -3,7 +3,7 @@ CREATE TABLE mocks (
     id BIGSERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     description TEXT,
-    protocol VARCHAR(50) NOT NULL,
+    protocol VARCHAR(20) NOT NULL,
     is_active BOOLEAN DEFAULT true,
     response_delay INTEGER DEFAULT 0,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

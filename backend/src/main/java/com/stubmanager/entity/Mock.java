@@ -32,7 +32,7 @@ public class Mock {
     private String description;
     
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 20)
     private Protocol protocol;
     
     @Column(name = "is_active")
