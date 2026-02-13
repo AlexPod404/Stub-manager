@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://postgres:5432/stubmanager}
+    username: ${DATABASE_USER:postgres}
+    password: ${DATABASE_PASSWORD:postgres}
+  
+  jpa:
+    show-sql: false
+  
+  data:
+    redis:
+      host: ${REDIS_HOST:redis}
+      port: ${REDIS_PORT:6379}
+  
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:kafka:9092}
+
+logging:
+  level:
+    com.stubmanager: INFO
+    org.springframework: WARN

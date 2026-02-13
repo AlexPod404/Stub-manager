@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: stub-manager-runtime
+
+server:
+  port: 8081

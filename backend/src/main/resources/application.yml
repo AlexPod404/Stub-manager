@@ -1,0 +1,62 @@
+spring:
+  application:
+    name: stub-manager
+  
+  profiles:
+    active: dev
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/stubmanager
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+  
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+  
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 60000
+  
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: stub-manager-group
+      auto-offset-reset: earliest
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  
+  cache:
+    type: redis
+    redis:
+      time-to-live: 3600000
+
+server:
+  port: 8080
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+
+logging:
+  level:
+    com.stubmanager: INFO
+    org.springframework: WARN
+    org.hibernate: WARN
