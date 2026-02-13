@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: stub-manager
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/stub_manager
+    username: stub_manager
+    password: stub_manager_password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 60000ms
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+
+logging:
+  level:
+    com.stub.manager: DEBUG
+    org.springframework.web: INFO
+    org.hibernate: INFO
