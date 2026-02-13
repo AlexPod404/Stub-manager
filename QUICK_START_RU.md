@@ -64,6 +64,7 @@ npm run dev
 
 - **Установка на локальный компьютер**: см. `LOCAL_SETUP_RU.md`
 - **Слияние в main ветку**: см. `MERGE_GUIDE_RU.md`
+- **О файлах сборки (JAR и др.)**: см. `BUILD_ARTIFACTS_RU.md` ⚠️
 - **Проверка установки**: см. `SETUP_VERIFICATION.md`
 - **API документация**: см. `docs/API.md`
 - **Архитектура**: см. `docs/ARCHITECTURE.md`
